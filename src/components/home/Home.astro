@@ -1,0 +1,47 @@
+---
+import BlueButton from '../BlueButton.astro';
+import LinkButton from '../LinkButton.astro';
+import Social from '../Social.astro';
+---
+
+<div id="home" class="xl:min-h-screen w-screen snap-end snap-always bg-neutral-base-900">
+  <div class="pt-28 px-4 flex flex-col gap-16 bg-[url('../assets/rich-hello.png')] bg-no-repeat bg-bottom pb-96 md:flex-row md:bg-left-bottom md:pb-52 xl:h-screen xl:container xl:bg-bottom xl:items-center xl:justify-between">
+    <div class="w-full flex flex-col gap-8 md:gap-2 md:w-1/2 xl:w-2/5">
+      <div class="white-bar"></div>
+      <div>
+        <h1 class="">I'm Rich, a Software Developer</h1>
+        <p>Please explore my website to learn more about me and my work. I've included sample code snippets, a portfolio of my work, and a blog where I share my thoughts on web development and other topics.</p>
+      </div>
+      
+      <a href="#about">
+        <BlueButton>
+          keyboard_arrow_down
+        </BlueButton>
+      </a>
+    </div>
+    <div class="w-full flex flex-col justify-center gap-6 md:w-1/2 xl:w-2/5">
+    <div class="pb-12 border-b-2 border-b-neutral-cool-grey-500">
+      <h5>ABOUT ME</h5> 
+      <p>
+        When I'm not coding, you can often find me at the gym, where I enjoy pushing my physical limits and staying in shape. But, it's not all about screens and squats for me. I have a deep love for the outdoors. I enjoy hiking, camping, and exploring the world around me.
+      </p>
+      <LinkButton>
+        LEARN MORE
+      </LinkButton>
+    </div>
+    <div class="pb-12 border-b-2 border-b-neutral-cool-grey-500">
+      <h5>MY WORK</h5>
+      <p>
+      I've been passionately building websites since 2003, and I'm thrilled to be a part of the ever-evolving world of web development. I started my proffesional career as a developer in 2020. I'm excited to share my experiences, knowledge, and projects with you through this website.
+      </p>
+      <LinkButton>
+        BROWSE PORTFOLIO
+      </LinkButton>
+    </div>
+    <div>
+      <h3>FOLLOW ME</h3>
+      <Social />
+    </div>
+    </div>
+  </div>
+</div>

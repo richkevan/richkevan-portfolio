@@ -1,0 +1,35 @@
+---
+import DateDisplay from "../DateDisplay.astro";
+import PageTitle from "../PageTitle.astro";
+import { education } from "../scripts/education"
+---
+
+<div id="pastEducation" class="min-h-screen w-screen bg-neutral-base-800 snap-end snap-always">
+  <div class="pt-28 px-4 flex flex-col pb-24 lg:container">
+    <PageTitle>My Education</PageTitle>
+    <h3>
+      Past education &
+      credentials
+    </h3>
+    <div class="flex flex-col md:flex-row md:flex-wrap gap-8 lg:justify-between">
+      {
+        education.map((item) => 
+        <details class="md:w-2/5 border-b-2 border-b-neutral-base-500 pb-4">
+          <summary>
+            <DateDisplay dates={item.school} />
+            <h3>{item.title}</h3>
+          </summary>
+          <div>
+          {item.description && <p>{item.description}</p>}
+          {item.bullets && 
+            <ul class="education pl-6">
+            {item.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>}
+        </div>
+        </details>
+        
+        )
+      }
+    </div>
+  </div>  
+</div>

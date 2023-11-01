@@ -1,0 +1,49 @@
+---
+import PageTitle from "../PageTitle.astro";
+import LinkButton from "../LinkButton.astro";
+import Social from "../Social.astro";
+import {Octokit} from "@octokit/core";
+import type { BaseGist } from "../../octokit";
+import defi from "../../assets/defi.png";
+const octokit = new Octokit({auth: import.meta.env.PUBLIC_GITHUB_ALT});
+const gists = await octokit.request('GET /users/richkevan/gists',{
+  username: 'richkevan',
+  headers: {
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+});
+---
+
+<div id="snippets" class="min-h-screen w-screen snap-end snap-always bg-neutral-base-900">
+  <div class="pt-28 px-4 flex flex-col gap-8 pb-24 xl:container">
+      <div class="pb-12">
+        <PageTitle>SNIPPETS & GISTS</PageTitle>
+        <div class="flex flex-col md:flex-row">
+          <h3 class="flex-1">Explore my latest snippets and gists</h3>
+          <LinkButton href="github.com/gists">Browse my GitHub gists</LinkButton>
+        </div>
+        
+      </div>
+    <div id="gists" class="flex flex-col gap-8 md:flex-row">
+      {gists.data.map((gist:BaseGist) =>
+      <div class="w-full xl:w-1/5">
+        <a href={gist.html_url}> 
+        <div class="flex flex-col rounded-xl min-h-full bg-neutral-cool-grey-700 overflow-clip">
+          <div class="bg-neutral-blue-grey-500">
+            <img src={defi.src} alt={gist.description}/>
+          </div>
+          <div class="bg-neutral-cool-grey-700 flex-1 p-2">
+            <h4>{gist.description}</h4>
+            <p>{gist.files[Object.keys(gist.files)[0]].language}</p>
+          </div>
+        </div>
+        </a>
+      </div>  
+      )}
+    </div>
+    <div class="border-t-2 border-t-neutral-cool-grey-500 flex flex-col pt-8 md:flex-row">
+      <h4 class="uppercase flex-1">Or follow me on social media</h4>
+      <Social />
+    </div>
+  </div>
+</div>

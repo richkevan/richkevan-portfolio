@@ -1,0 +1,7 @@
+---
+const { href, target } = Astro.props;
+---
+<a href={href} target={target} class="link-wrapper">
+<slot /><span class="material-symbols-outlined">arrow_forward</span>
+<!-- <div class="link-bar"></div> -->
+</a>

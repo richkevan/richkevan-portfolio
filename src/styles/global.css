@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Color+Emoji&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+
+  * {
+    @apply box-border text-Font-400 subpixel-antialiased font-san-serif
+  }
+
+  html {
+    font-size: 16px;
+    @apply bg-neutral-cool-grey-800 overflow-x-hidden scroll-smooth snap-y snap-proximity
+  }
+
+  h1 {
+    @apply text-4xl font-mono font-bold;
+  }
+  h2 {
+    @apply text-2xl font-mono font-bold;
+  }
+  h3 {
+    @apply text-xl font-mono font-bold;
+  }
+  h4 {
+    @apply text-lg font-mono font-bold;
+  }
+  
+  h5 {
+    @apply text-base font-mono font-bold;
+  }
+
+  a {
+    @apply  text-inherit text-inherit-color
+  }
+
+  @media screen and (max-width: 640px) {
+    * {
+      @apply text-base
+    }
+
+    .skills > li {
+      @apply w-1/2
+    }
+  }
+  
+  @media screen and (min-width: 640px) {
+    html {
+      font-size: 18px;
+    }
+    
+    h1 {
+      @apply text-5xl;
+    }
+
+    h2 {
+      @apply text-3xl;
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+  }
+
+  @media screen and (min-width: 1280px) {
+    h1 {
+      @apply text-6xl;
+    }
+
+    h2 {
+      @apply text-5xl;
+    }
+
+    h3 {
+      @apply text-4xl;
+    }
+  }
+  
+  details::before {
+  @apply text-3xl absolute left-2 top-0
+  }
+}
+
+@layer components {
+  .material-symbols-outlined {
+    @apply text-inherit-color text-[1.5em] font-bold
+  }
+  .circle-button-primary {
+    @apply rounded-full bg-primary-blue-700 w-[64px] h-[64px] min-w-[64px] min-h-[64px] grid place-items-center cursor-pointer  text-white text-[26px]
+    transition-colors duration-300 ease-in-out hover:bg-primary-blue-500
+    transition-transform hover:scale-95
+  }
+
+  .circle-button-secondary {
+    @apply rounded-full bg-accent-secondary w-[64px] h-[64px] min-w-[64px] min-h-[64px] grid place-items-center cursor-pointer  text-white text-[26px]
+    transition-all duration-300 ease-in-out hover:bg-system-blue-300 hover:scale-95
+  }
+
+
+  .link-wrapper {
+    @apply w-max flex border-b-2 border-b-white text-white text-lg hover:text-primary-blue-700 hover:border-b-primary-blue-700 items-center
+    transition-all duration-300 ease-in-out text-inherit
+
+  }
+  
+  .white-bar {
+    @apply bg-white h-2 w-36 aspect-[1/18] mb-8
+  }
+
+  .project-container {
+    @apply w-full h-screen
+  }
+
+  .scroll-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

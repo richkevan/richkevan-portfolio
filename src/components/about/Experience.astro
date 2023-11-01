@@ -1,0 +1,52 @@
+---
+import PageTitle from "../PageTitle.astro";
+import LinkButton from "../LinkButton.astro";
+---
+
+<div id="experience" class="min-h-screen w-screen bg-neutral-base-900 snap-end snap-always">
+  <div class="pt-28 px-4 flex flex-col pb-16 lg:container">
+      <PageTitle>My Experience</PageTitle>
+      <div class="flex flex-col border-b-2 border-b-primary-orange-600 pb-8 mb-8 md:flex-row lg:justify-between">
+        <h3 class="lg:w-2/5">Over 3 years of experience and 100+ projects</h3>
+        <h3><LinkButton href="/contact/">Get in touch</LinkButton></h3>
+      </div>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+          <div class="text-display-h5 xs:text-lg text-white">Hard Skills</div>
+          <ul class="skills flex flex-row md:flex-col h-auto flex-wrap text-lg font-bold">
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Django</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <div class="text-display-h5 xs:text-lg text-white">Soft Skills</div>
+          <ul class="skills flex flex-row md:flex-col h-auto flex-wrap text-lg font-bold">
+            <li>Communication</li>
+            <li>Teamwork</li>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+            <li>Adaptability</li>
+            <li>Work Ethic</li>
+            <li>Leadership</li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <div class="text-display-h5 xs:text-lg text-white">Certificates</div>
+          <ul class="flex flex-row h-auto md:flex-col flex-wrap text-lg font-bold">
+            <li>Full Stack Web Development</li>
+            <li>Front End Development</li>
+            <li>Front End Libraries</li>
+            <li>Responsive Web Design</li>
+            <li>JavaScript Algorithms and Data Structures</li>
+            <li>Back End Development and APIs</li>
+            <li>Python</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>

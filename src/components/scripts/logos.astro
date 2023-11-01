@@ -1,0 +1,30 @@
+---
+import instantteams from "../../assets/project-logos/instantteamslogo.svg"
+import twelvemillionplus from "../../assets/project-logos/twelvemillionplus.png"
+import baysidechurch from "../../assets/project-logos/baysidechurch.svg"
+import rocklogo from "../../assets/project-logos/rocklogo.png"
+const logos = [
+  {
+    title: "Instant Teams",
+    imgSrc: instantteams
+  },
+  {
+    title: "12 Million Plus",
+    imgSrc: twelvemillionplus
+  },
+  {
+    title: "Bayside Church",
+    imgSrc: baysidechurch
+  },
+  {
+    title: "Rock RMS",
+    imgSrc: rocklogo
+  } 
+];
+---
+<div class="flex flex-col gap-8 md:flex-row md:flex-wrap justify-center items-center lg:gap-0">
+  {logos.map((logo) => (
+      <img src={logo.imgSrc.src} alt={logo.title} class="w-full h-fit p-3 md:w-2/5 lg:w-1/4" />
+  ))
+  }
+</div>

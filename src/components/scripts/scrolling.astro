@@ -1,0 +1,50 @@
+---
+---
+<script>
+    const skillcontainer = document.getElementById("skill-container")!;
+    var skillBack: HTMLButtonElement, 
+    skillForward: HTMLButtonElement,
+    count = 0,
+    limit = skillcontainer.children?.length - 1;
+    console.log(skillcontainer?.children.length, window.innerWidth);
+    if (window.innerWidth < 1024) {
+      skillBack = document.getElementById("MobileSkillBack") as HTMLButtonElement;
+      skillForward = document.getElementById("MobileSkillForward") as HTMLButtonElement;
+    } else {
+      skillBack = document.getElementById("SkillBack") as HTMLButtonElement;
+      skillForward = document.getElementById("SkillForward") as HTMLButtonElement;
+      limit = Math.ceil(skillcontainer?.children.length / 2);
+    }
+    console.log("scroll limit",limit);
+    if (skillcontainer && skillForward) {
+      skillForward.addEventListener("click", () => {
+        count += 1;
+          if (count >= limit) {
+          skillForward.disabled = true;
+        } else {
+          skillForward.disabled = false;
+          skillBack.disabled = false;
+        }
+          skillcontainer.scrollBy({
+            left: skillcontainer.children[0].clientWidth +12.5,
+            behavior: "smooth",
+          });
+      });
+    }
+
+    if (skillcontainer && skillBack) {
+      skillBack.addEventListener("click", () => {
+        count -= 1;
+        if (count <= 0) {
+          skillBack.disabled = true;
+        } else {
+          skillBack.disabled = false;
+          skillForward.disabled = false;
+        }
+        skillcontainer.scrollBy({
+          left: (skillcontainer.children[0].clientWidth + 12.5) * -1,
+          behavior: "smooth",
+        });
+    });
+  }
+</script>

@@ -1,0 +1,10 @@
+---
+const { type } = Astro.props;
+---
+    <div>
+      <button type={type} class="link-wrapper group xs:d5">
+        <slot />
+        <span class="material-symbols-outlined link-arrow-right">arrow_right_alt</span>
+        <div class="link-bar"></div>
+      </button>
+    </div>

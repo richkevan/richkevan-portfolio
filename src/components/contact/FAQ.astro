@@ -1,0 +1,22 @@
+---
+import PageTitle from '../PageTitle.astro'
+import { faq } from '../scripts/faq.tsx'
+---
+
+<div class="min-h-screen w-screen bg-neutral-cool-grey-900">
+  <div class="xl:container mx-auto flex flex-col snap-end snap-always justify-center items-center xs:pt-24 xs:pb-24 gap-12">
+    <div class="flex flex-col items-center gap-4">
+      <PageTitle>FAQs</PageTitle>
+      <div class="d4 text-center">Frequently Asked Questions</div>
+      <h4>Welcome to our FAQ page, We're here to provide clarity and assistance, making your experience with us as seamless and informative as possible.</h4>
+    </div>
+    <div class="flex flex-col items-start w-full gap-6">
+    {faq.map((item) => (
+      <details class="w-full border-t-2 border-primary-orange-500 py-12 last:border-b-2">
+        <summary class="text-display-h4">{item.summary}</summary>
+        <h4 class="pt-4">{item.response}</h4>
+      </details>
+    ))}
+    </div>
+  </div>
+</div>

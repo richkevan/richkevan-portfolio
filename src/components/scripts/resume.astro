@@ -1,0 +1,64 @@
+---
+import DateDisplay from "../DateDisplay.astro";
+import instantteams from "../../assets/project-logos/instantteamslogo.svg"
+import baysidechurch from "../../assets/project-logos/baysidechurch.svg"
+const resume = [
+  {
+    title:"Instant Teams",
+    img:instantteams,
+    position:"Junior Full Stack Developer",
+    dates: ["Feb 2022", "Present"],
+    bullets: [
+      "Refactored and updated the entire routing component of a large-scale web application in 1 week eliminating the need for several components and reducing compile size by 25%",
+          "Develop and maintain a library of npm packages that converted commonly used functions and types into reusable code, resulting in 90% reduction of bugs deployed to production.",
+          "Work with existing and emerging technologies to create single page and complex applications.",
+          "Designed and implemented a complex client/server software architecture to enable identity management across multiple platforms in 2 weeks.",
+          "Maintain a Git repository for Oauth2 server front end and functions. Conduct github code reviews to ensure clean merges into staging and production environments.",
+    ]
+  },
+  {
+    title: "Bayside Church",
+    img: baysidechurch,
+    position: "Junior Application Developer",
+    dates: ["Jan 2021", "Dec 2021"],
+    bullets: [
+      "Developed and maintained a library of reusable components for a large-scale web application.",
+      "Worked with existing and emerging technologies to create single page and complex applications.",
+      "Designed and implemented a complex client/server software architecture to enable identity management across multiple platforms in 2 weeks.",
+      "Maintained a Git repository for Oauth2 server front end and functions. Conducted github code reviews to ensure clean merges into staging and production environments.",
+    ]
+  },
+  {
+    title: "Bayside Church",
+    img: baysidechurch,
+    position: "Project Manager",
+    dates: ["Sept 2017", "Jan 2021"],
+    bullets: [
+      "Managed a team of 10+ volunteers to ensure that all projects were completed on time and within budget.",
+      "Worked with internal and external stakeholders to ensure that project requirements were met.",
+      "Managed a budget of $10,000+ to ensure that all projects were completed on time and within budget.",
+      "Worked with internal and external stakeholders to ensure that project requirements were met.",
+    ]
+  }
+]
+---
+
+{resume.map((job) => 
+  <details class="relative pb-4 border-b-2 cursor-pointer xl:before:content-['✚'] xl:open:before:content-['✖︎']">
+  <summary class="flex flex-row">
+    <div class="flex flex-col lg:flex-row flex-1 lg:gap-8 lg:pl-12">
+      <div class="hidden lg:flex lg:w-1/5">
+        <img src={job.img.src} alt="" class="h-full" />
+      </div>
+      <h3 class="lg:hidden">{job.title}</h3>
+      <p class="lg:text-xl">{job.position}</p>
+    </div>
+    <DateDisplay dates={job.dates} />
+  </summary>
+  <div class="pt-4">
+    <ul class="resume">
+      {job.bullets.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+  </details>
+)}

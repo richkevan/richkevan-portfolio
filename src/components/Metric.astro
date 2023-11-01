@@ -1,0 +1,8 @@
+---
+const { metrics } = Astro.props;
+---
+
+<div class="flex gap-2 items-center">
+  <h1>{metrics[0]}</h1>
+  <div class="font-bold text-lg md:w-[10ch]">{metrics[1]}</div>
+</div>

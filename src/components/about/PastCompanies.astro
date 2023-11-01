@@ -1,0 +1,23 @@
+---
+import PageTitle from "../PageTitle.astro"
+import LinkButton from "../LinkButton.astro"
+import Logos from "../scripts/logos.astro"
+---
+
+<div id="pastClients" class="min-h-screen w-screen bg-neutral-base-900 snap-end snap-always">
+  <div class="pt-28 px-4 lg:pt-48 lg:container">
+    <div class="text-center flex flex-col gap-4 bg-neutral-base-700 rounded-2xl p-8">
+      <PageTitle>My Past Companies</PageTitle>
+      <h3>Brands & companies I've worked with</h3>
+      <Logos />
+      <!-- <div id="logos" class="flex flex-col gap-8 md:flex-row md:flex-wrap justify-center items-center">
+        {logos.map(({ title, imgSrc }) => (
+          <img src={imgSrc} alt={title} class="w-full md:w-2/5 lg:w-1/5 h-max"/>
+        ))}
+      </div> -->
+      <div class="w-max mx-auto">
+        <h3><LinkButton href="/contact/">Get in touch</LinkButton></h3>
+      </div>
+    </div>
+  </div>
+</div>

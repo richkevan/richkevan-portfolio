@@ -1,0 +1,21 @@
+---
+import LinkButton from "../LinkButton.astro"
+import PageTitle from "../PageTitle.astro";
+import Resumes from "../scripts/resume.astro"
+---
+
+<div id="pastExperience" class="min-h-screen w-screen snap-end snap-always bg-neutral-base-900">
+  <div class="pt-28 px-4 lg:pt-48 lg:container">
+    <PageTitle>My Experience</PageTitle>
+    <div class="flex flex-col md:flex-row md:justify-between gap-2 mb-8">
+      <h3 class="md:w-2/5">I've worked with some amazing companies</h3>
+      <div>
+        <h3><LinkButton href="/contact/">Get in touch</LinkButton></h3>
+        <h3><LinkButton href="/resume.pdf">View Resume</LinkButton></h3>
+      </div>
+    </div>
+    <div class="flex flex-col gap-8">
+      <Resumes />
+    </div>
+  </div>
+</div>

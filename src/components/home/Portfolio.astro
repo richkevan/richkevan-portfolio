@@ -1,0 +1,44 @@
+---
+import LinkButton from "../LinkButton.astro";
+import PageTitle from "../PageTitle.astro";
+import RepoCard from "../projectcard/RepoCard.astro";
+import RepoImg from "../projectcard/RepoImg.astro";
+import RepoTags from "../projectcard/RepoTags.astro";
+import RepoTitle from "../projectcard/RepoTitle.astro";
+import RepoDescription from "../projectcard/RepoDescription.astro";
+import { Octokit } from "@octokit/core";
+import RepoLinks from "../projectcard/RepoLinks.astro";
+const octokit = new Octokit({auth: import.meta.env.PUBLIC_GITHUB_ALT});
+const repos = await octokit.request('GET /user/repos', {
+  since: "2023-01-01T00:00:00Z",
+})
+.then((response) => {
+  return response.data.filter((repo) => repo?.topics?.includes("highlight"));
+})
+
+---
+
+<div id="portfolio" class="min-h-screen w-screen bg-neutral-base-800 relative">
+  <div class=" pt-28 px-4 flex flex-row flex-wrap mb:gap-8 pb-28 xl:container">
+  <div class="absolute h-[100vh] top-0 snap-always snap-end -z-10"></div>
+  <div class="absolute h-[100vh] bottom-0 snap-always snap-end -z-10"></div>
+    <div class="w-full md:w-[48%]">
+      <PageTitle>My Portfolio</PageTitle>
+      <h3>Take a look at the latest projects I've done</h3>
+      <h4><LinkButton href="/portfolio">Browse all projects</LinkButton></h4>
+      
+    </div>
+    {repos.map((repo) => 
+    <div class="w-full md:w-[48%] md:odd:-translate-y-1/2 mb-8">
+      <RepoCard>
+        <RepoImg image={`https://raw.githubusercontent.com/${repo!.full_name}/main/${repo!.name}.png`} />
+        <RepoDescription>
+        <RepoTags tags={repo.topics?.slice(0,2)} />
+        <RepoTitle title={repo.name} subtitle={repo.description}/>
+        <RepoLinks live={repo.homepage} github={repo.html_url} />
+        </RepoDescription>
+      </RepoCard>
+    </div>
+    )}
+    </div>
+</div>

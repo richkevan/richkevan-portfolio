@@ -1,0 +1,8 @@
+---
+const { placeholder, name, rows } = Astro.props;
+---
+    <textarea
+    placeholder={placeholder} 
+    name={name} 
+    class="bg-transparent border-b-system-orange-400 py-2 border-b-2 placeholder:text-inherit-color placeholder:text-lg focus:ring-0 focus:outline-none focus:border-b-4 focus:placeholder:font-bold" 
+    rows={rows} />

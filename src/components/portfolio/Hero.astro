@@ -1,0 +1,42 @@
+---
+import RepoCard from "../projectcard/RepoCard.astro";
+import RepoImg from "../projectcard/RepoImg.astro";
+import RepoTags from "../projectcard/RepoTags.astro";
+import RepoTitle from "../projectcard/RepoTitle.astro";
+import RepoDescription from "../projectcard/RepoDescription.astro";
+import RepoLinks from "../projectcard/RepoLinks.astro";
+import {Octokit} from "@octokit/core";
+const octokit = new Octokit({auth: import.meta.env.PUBLIC_GITHUB_ALT});
+const repos = await octokit.request('GET /user/repos', {
+  since: "2023-01-01T00:00:00Z",
+})
+.then((response) => {
+  return response.data.filter((repo) => repo.topics?.includes("portfolio"));
+})
+---
+
+<div class="min-h-screen w-screen bg-neutral-cool-grey-900">
+  <div class="pt-28 px-4 pb-24 lg:container">
+    <div class="w-full flex flex-col items-center gap-2 pb-8">
+      <div class=" white-bar"></div>
+    <h1>
+      Portfolio
+    </h1>
+    <p class='w-2/3 text-center'>This is a collection of projects that were recently completed or showcase something unique/special.</p>
+    </div>
+    <div class="flex flex-row flex-wrap gap-4 lg:gap-8">
+      {repos.map((repo) => 
+        <div class="w-full md:w-[48%]">
+          <RepoCard>
+            <RepoImg image={`https://raw.githubusercontent.com/${repo!.full_name}/main/${repo!.name}.png`} />
+            <RepoDescription>
+            <RepoTags tags={repo.topics?.slice(0,2)} />
+            <RepoTitle title={repo.name} subtitle={repo.description}/>
+            <RepoLinks live={repo.homepage} github={repo.html_url} />
+            </RepoDescription>
+          </RepoCard>
+        </div>
+      )}
+    </div>
+  </div>
+</div>

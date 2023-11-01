@@ -1,0 +1,34 @@
+---
+import { tools } from '../scripts/tools'
+import Scrolling from '../scripts/scrolling.astro'
+import BlueButton from '../BlueButton.astro';
+import SkillCard from '../card/SkillCard.astro';
+import PageTitle from '../PageTitle.astro';
+---
+
+<div id="tools" class="w-screen min-h-screen bg-neutral-base-800 snap-end snap-always">
+  <div class="pt-28 px-4 flex flex-col gap-8 pb-24 lg:container lg:gap-4">
+    <PageTitle>My Tools</PageTitle>
+    <div class="flex flex-row mb-8 lg:justify-between">
+      <h3 class="lg:w-1/4">
+        Discover my favorite tools
+      </h3>
+      <div id="skill-buttons" class="hidden lg:flex flex-row gap-8">
+        <BlueButton id="SkillBack">arrow_back</BlueButton>
+        <BlueButton id="SkillForward">arrow_forward</BlueButton>
+      </div>
+    </div>
+    <div class="relative overflow-x-visible flex w-full h-max overflow-clip">
+      <div id="skill-container" class="relative flex flex-row flex-nowrap overflow-x-auto scroll-none snap-x">
+        {tools.map((tool) => 
+          <SkillCard title={tool.title} icon={tool.svgIcon} description={tool.description} />
+          )}   
+      </div>
+    </div>
+    <div id="skill-buttons" class="flex flex-row gap-8 lg:hidden justify-center">
+      <BlueButton id="MobileSkillBack">arrow_back</BlueButton>
+      <BlueButton id="MobileSkillForward">arrow_forward</BlueButton>
+    </div>
+  </div>
+  <Scrolling />
+</div>

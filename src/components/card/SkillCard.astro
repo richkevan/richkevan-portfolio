@@ -1,0 +1,16 @@
+---
+const {icon, title, description} = Astro.props;
+import Icon from "astro-icon";
+---
+    <div class="min-w-full md:min-w-[66%] xl:min-w-[25%] mr-4 snap-start snap-always">
+      <div class="bg-neutral-base-700 rounded-xl p-6 w-full grid place-content-center gap-8 relative aspect-[3/4]">
+      <div class="rounded-full bg-primary-blue-700 fill-white w-20 h-20 p-4">
+        <Icon name={icon}/>
+      </div>
+      <div class="flex gap-2 p-2 items-center">
+        <h3>{title}</h3>
+      </div>
+      <p class="">{description}</p>
+      <div class="white-bar"></div>
+    </div>
+    </div>

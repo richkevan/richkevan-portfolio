@@ -1,0 +1,40 @@
+---
+import PageTitle from "../PageTitle.astro";
+import LinkButton from "../LinkButton.astro";
+import Metric from "../Metric.astro";
+import Logos from "../scripts/logos.astro"
+---
+
+<div id="about" class="min-h-screen w-full bg-neutral-base-800 snap-end snap-always">
+  <div class="pt-28 px-4 flex flex-col gap-12 xl:container xl:h-screen">
+    <PageTitle>About me</PageTitle>
+    <div class="flex flex-col gap-12 xl:flex-row xl:flex-1 xl:gap-24">
+      <div class="flex flex-col gap-8">   
+        <div>
+          <h2>I've been developing websites since 2003</h2>  
+          <p>I took my first html course in 2000 and spent the next couple decades playing around with coding as a hobby</p>
+        </div>
+        <span class="text-2xl font-bold">
+          <LinkButton href="/about">More about me</LinkButton>
+        </span>
+      </div>
+      <div class="flex flex-col md:gap-4">
+        <div class="flex flex-col md:flex-row md:gap-8">
+          <Metric metrics={[3, "Years of experience"]}/>
+          <Metric metrics={[100, "Successful projects"]}/>
+        </div>
+        <p>I been a  professional developer since 2020 and a hobbyist since 2000. In my time as both a professional and a hobbyist I have created hundreds of projects</p>
+      </div>
+    </div>
+    <div class="border-t-2 border-t-neutral-cool-grey-500 pt-8 flex flex-col lg:flex-row gap-12 items-center py-8">
+      <h5 class="uppercase whitespace-nowrap">Past experience</h5>
+      <!-- <div class="flex flex-row flex-wrap w-full justify-center items-center">
+        {logos.map(logo => (
+          <img src={logo.imgSrc} alt={logo.title} class=" w-1/2 h-fit p-3 md:w-1/4"/>
+        ))}
+      </div> -->
+      <Logos/>
+    </div>
+  
+  </div>
+</div>

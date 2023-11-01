@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon"
+
+const socials = [
+    {
+      label: "Facebook",
+      icon: "social/facebook",
+      url: "https:www.facebook.com/rlchkevan/",
+      color:"#1877F2"
+    },
+    {
+      label: "Instagram",
+      icon: "social/instagram",
+      url: "https:www.instagram.com/rich.kevan/",
+      color: "#E4405F"
+    },
+    {
+      label: "LinkedIn",
+      icon: "social/linkedin",
+      url: "https:www.linkedin.com/in/richkevan",
+      color: "#0A66C2"
+    },
+    {
+      label: "GitHub",
+      icon: "tools/github",
+      url: "https:github.com/richkevan/richkevan",
+      color: "#181717"
+    },
+    // {
+    //    name: "CodePen",
+    //    icon: codepen,
+    //    url: "https:codepen.io/richkevan",
+    //    color: "#000000"
+    //  },
+    //  {
+    //    name: "TikTok",
+    //    icon: tiktok,
+    //    url: "https:www.tiktok.com/@richkevan",
+    //    color: "#000000"
+    //  },
+    //  {
+    //    name: "YouTube",
+    //    icon: youtube,
+    //    url: "https:www.youtube.com/channel/UCBq9Xv4j2lHJ9O1J8o7Tn5Q",
+    //    color: "#FF0000"
+    //  }
+  ];
+---
+  
+
+<div class="flex flex-row gap-4 my-4 xl:max-w-[250px] group xs:w-full">
+  {socials.map((social) =>
+    <a href={social.url} target="_blank" class="w-6 xs:w-12">
+      <Icon name={social.icon} class="w-6 h-6 xs:w-12 xs:h-12 fill-white group-hover:fill-neutral-cool-grey-800 group-hover:hover:fill-primary-blue-700"/>
+    </a>
+  )}
+</div>

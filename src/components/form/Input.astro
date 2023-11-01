@@ -1,0 +1,9 @@
+---
+const { type, name, placeholder } = Astro.props;
+const className="bg-transparent py-4 border-b-system-orange-400 border-b-2 placeholder:text-inherit-color placeholder:text-lg focus:ring-0 focus:outline-none focus:border-b-4 focus:placeholder:font-bold border-b-neutral-base-400 w-full text-display-h4 pb-8";
+---
+    <input 
+    type={type} 
+    name={name} 
+    placeholder={placeholder} 
+    class={className} />

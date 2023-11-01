@@ -1,0 +1,21 @@
+---
+
+---
+<div class="text-right">
+  <span id="hamburger" class="material-symbols-outlined text-4xl">menu</span>
+  <div id="fullScreenMenu" class="fixed left-0 top-16 w-screen h-[calc(100vh-64px)] hidden flex flex-col z-20 bg-neutral-cool-grey-900">
+    <!-- <span class="material-symbols-outlined text-display-3 text-right px-4 py-4 cursor-pointer" id="closeMenu">close</span> -->
+    <ul class="text-left w-3/5 mx-auto pt-28 text-3xl font-mono font-bold">
+      <li class="text-inherit"><a href="/">Home</a></li>
+      <li class="text-inherit"><a href="/about">About</a></li>
+      <li class="text-inherit"><a href="/blog">Blog</a></li>
+      <li class="text-inherit"><a href="/portfolio">Portfolio</a></li>
+    </ul>
+  </div>
+  <script>
+    document.getElementById("hamburger")!.addEventListener("click", function() {
+      document.getElementById("hamburger")?.textContent  === "menu" ? document.getElementById("hamburger")!.textContent = "close" : document.getElementById("hamburger")!.textContent = "menu";
+      document.getElementById("fullScreenMenu")!.classList.toggle("hidden");
+    });
+  </script>
+</div>
