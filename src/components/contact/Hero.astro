@@ -3,24 +3,27 @@ import Social from '../Social.astro'
 import Input from '../form/Input.astro'
 import TextArea from '../form/TextArea.astro'
 import SubmitButton from '../form/SubmitButton.astro'
+import ContactForm from '../form/ContactForm.astro';
 ---
 
 <div class="min-h-screen w-screen bg-neutral-base-900">
-  <div class="xl:container mx-auto flex flex-col snap-end snap-always justify-center items-center xs:pt-16 xs:pb-24 gap-12">
-    <div class="w-full flex flex-col gap-4 pt-16">
+  <div class="pt-24 px-4 pb-28 gap-4 lg:container">
+    <div class="w-full flex flex-col pb-8">
       <div class=" white-bar"></div>
-    <div class="d3">
-      Let's work together
+      <h1>Let's work together</h1>
     </div>
-    <div class="d4">Get in touch with me</div>
-    </div>
-    <details>
-      <summary class=" text-display-h4">Are you ready to turn your project and dream into a living, breathing reality?</summary>
-      <h4 class="pt-4"> I'm here to help you bridge the gap between your vision and its manifestation.Whether you have a groundbreaking idea, a creative endeavor, or a life-changing project in mind,I'm eager to collaborate with you. Let's explore the infinite possibilities, overcome obstacles, and weave your dreams into tangible achievements. I invite you to reach out and start this incredible journey together. Contact me today, and let's make your aspirations a vibrant reality. Your dreams deserve to be more than just dreams; they deserve to be lived.<h4>
-    </details>
-      <Social />
-      <div class=" bg-neutral-base-600 rounded-xl py-6 w-full">
-        <form class="flex flex-col gap-8 xs:p-4">
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="w-full flex flex-col">
+        <h3>Get in touch with me</h3>
+        <details>
+          <summary class=" text-display-h4">Are you ready to turn your project and dream into a living, breathing reality?</summary>
+          <h4 class="pt-4"> I'm here to help you bridge the gap between your vision and its manifestation.Whether you have a groundbreaking idea, a creative endeavor, or a life-changing project in mind,I'm eager to collaborate with you. Let's explore the infinite possibilities, overcome obstacles, and weave your dreams into tangible achievements. I invite you to reach out and start this incredible journey together. Contact me today, and let's make your aspirations a vibrant reality. Your dreams deserve to be more than just dreams; they deserve to be lived.<h4>
+        </details>
+        <Social />
+      </div>
+     
+      <div class=" bg-neutral-base-600 rounded-xl p-6 w-full">
+        <ContactForm>
           <Input 
           type="text"
           name="name" 
@@ -38,7 +41,8 @@ import SubmitButton from '../form/SubmitButton.astro'
           rows="5"
           name="message" />
           <SubmitButton type="submit">Contact me</SubmitButton>
-        </form>
+        </ContactForm>
+      </div>
     </div>
   </div>
 </div>

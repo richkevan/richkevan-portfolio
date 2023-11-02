@@ -1,0 +1,18 @@
+---
+---
+
+<form id="contact" class="flex flex-col gap-4">
+  <slot />
+</form>
+<script>
+  import { createContact } from "../../utilities/firestore";
+  const form = document.getElementById('contact')!;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(e)
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+    createContact(data as { name: string, email: string, message: string, subject: string});
+  });
+</script>
