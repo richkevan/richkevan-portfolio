@@ -30,7 +30,7 @@ const repos = await octokit.request('GET /user/repos', {
           <RepoCard>
             <RepoImg image={`https://raw.githubusercontent.com/${repo!.full_name}/main/${repo!.name}.png`} />
             <RepoDescription>
-            <RepoTags tags={repo.topics?.slice(0,2)} />
+            <RepoTags tags={repo.topics} />
             <RepoTitle title={repo.name} subtitle={repo.description}/>
             <RepoLinks live={repo.homepage} github={repo.html_url} />
             </RepoDescription>
