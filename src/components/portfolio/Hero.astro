@@ -24,7 +24,7 @@ const repos = await octokit.request('GET /user/repos', {
     </h1>
     <p class='w-2/3 text-center'>This is a collection of projects that were recently completed or showcase something unique/special.</p>
     </div>
-    <div class="flex flex-row flex-wrap gap-4 lg:gap-8">
+    <div class="flex flex-row flex-wrap gap-4 lg:gap-8 group">
       {repos.map((repo) => 
         <div class="w-full md:w-[48%]">
           <RepoCard>

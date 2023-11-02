@@ -2,6 +2,6 @@
 const { title, subTitle } = Astro.props;
 ---
     <div class="z-10 bg-neutral-base-700 bg-opacity-60">
-      <div class="text-display-5 uppercase font-light">{title}</div>
-      {subTitle && <div class="text-2xl font-semibold line-clamp-2 text-clip">{subTitle}</div>}
+      <h3 class="uppercase w-full text-center pt-4">{title}</h3>
+      {subTitle && <h5 class="line-clamp-2 text-clip">{subTitle}</h5>}
     </div>

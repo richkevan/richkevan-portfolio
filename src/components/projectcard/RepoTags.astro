@@ -4,7 +4,7 @@ const { tags } = Astro.props;
 
 <div class="flex flex-wrap gap-1 h-min flex-row-reverse">
   {tags.map((tag: string,) => (
-    <h4 class="font-medium text-center bg-neutral-blue-grey-600 h-min leading-8 rounded-lg whitespace-nowrap w-[10ch] px-2 overflow-clip">{tag}</h4>
+    <h5 class="text-center bg-neutral-blue-grey-600 h-min leading-8 rounded-lg whitespace-nowrap w-[10ch] px-2 overflow-clip text-ellipsis">{tag}</h5>
   ))}
 </div>
  
