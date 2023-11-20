@@ -13,21 +13,20 @@ import PageTitle from '../PageTitle.astro';
       <h3 class="lg:w-1/4">
         Discover my favorite tools
       </h3>
-      <div id="skill-buttons" class="hidden lg:flex flex-row gap-8">
-        <BlueButton id="SkillBack">arrow_back</BlueButton>
-        <BlueButton id="SkillForward">arrow_forward</BlueButton>
-      </div>
     </div>
     <div class="relative overflow-x-visible flex w-full h-max overflow-clip">
-      <div id="skill-container" class="relative flex flex-row flex-nowrap overflow-x-auto scroll-none snap-x">
+      <div id="skill-container" class="relative flex flex-row flex-nowrap lg:justify-end lg:w-full overflow-x-auto scroll-none snap-x h-[60vh]">
         {tools.map((tool) => 
           <SkillCard title={tool.title} icon={tool.svgIcon} description={tool.description} />
           )}   
       </div>
     </div>
-    <div id="skill-buttons" class="flex flex-row gap-8 lg:hidden justify-center">
-      <BlueButton id="MobileSkillBack">arrow_back</BlueButton>
-      <BlueButton id="MobileSkillForward">arrow_forward</BlueButton>
+    <div class="flex lg:hidden justify-center items-center">
+      <h3>Scroll Left</h3>
+      <span class="material-symbols-outlined animate-pulse1">arrow_forward_ios</span>
+      <span class="material-symbols-outlined animate-pulse2">arrow_forward_ios</span>
+      <span class="material-symbols-outlined animate-pulse3">arrow_forward_ios</span>
+    </div>
     </div>
   </div>
   <Scrolling />
