@@ -2,15 +2,18 @@
 const {icon, title, description} = Astro.props;
 import Icon from "astro-icon";
 ---
-    <div class="min-w-full md:min-w-[66%] xl:min-w-[25%] mr-4 snap-start snap-always">
-      <div class="bg-neutral-base-700 rounded-xl p-6 w-full grid place-content-center gap-8 relative aspect-[3/4]">
-      <div class="rounded-full bg-primary-blue-700 fill-white w-20 h-20 p-4">
+    <div class="min-w-full md:min-w-[66%] lg:min-w-0 lg:min-w-20 lg:overflow-clip lg:hover:flex-1 mr-4 snap-start snap-always min-h-full group">
+      <div class="bg-neutral-base-700 rounded-xl p-6 lg:px-0 lg:py-4 w-full flex flex-col lg:flex-row gap-8 lg:gap-0 relative h-[90%] overflow-clip">
+      <div class="rounded-full bg-primary-blue-700 fill-white w-20 h-20 p-4 lg:group-hover:ml-2">
         <Icon name={icon}/>
       </div>
-      <div class="flex gap-2 p-2 items-center">
-        <h3>{title}</h3>
+      <div class="flex lg:hidden flex-col lg:group-hover:flex w-[calc(100%-90px)] p-4 justify-between h-full">
+        <div class="flex gap-2 p-2 items-center">
+          <h3>{title}</h3>
+        </div>
+        <p class="">{description}</p>
+        <div class="white-bar justify-self-end"></div>
       </div>
-      <p class="">{description}</p>
-      <div class="white-bar"></div>
+      <!--  -->
     </div>
     </div>

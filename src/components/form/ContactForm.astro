@@ -14,5 +14,6 @@
     const data = Object.fromEntries(formData);
     console.log(data);
     createContact(data as { name: string, email: string, message: string, subject: string});
+    (e.target as HTMLFormElement).reset();
   });
 </script>

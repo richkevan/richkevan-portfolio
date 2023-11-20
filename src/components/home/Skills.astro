@@ -4,6 +4,7 @@ import BlueButton from "../BlueButton.astro";
 import { skillsArr } from "../scripts/skills";
 import Scrolling from "../scripts/scrolling.astro";
 import SkillCard from "../card/SkillCard.astro";
+import Icon from "astro-icon";
 ---
 
 <div id="skills" class="w-screen min-h-screen snap-end snap-always bg-neutral-base-900">
@@ -13,21 +14,23 @@ import SkillCard from "../card/SkillCard.astro";
         <PageTitle>Skills</PageTitle>
         <h2>My extensive list of skills</h2>
       </div>
-      <div class="hidden lg:flex flex-row gap-8 ">
-        <BlueButton id="SkillBack">arrow_back</BlueButton>
-        <BlueButton id="SkillForward">arrow_forward</BlueButton>
-      </div>
     </div>
     <div class="relative overflow-x-visible flex w-full h-max overflow-clip">
-      <div id="skill-container" class="relative flex flex-row flex-nowrap overflow-x-auto scroll-none snap-x">
+      <div id="skill-container" class="relative flex flex-row flex-nowrap overflow-x-auto scroll-none snap-x h-[60vh]">
         {skillsArr.map((skill) => 
           <SkillCard title={skill.title} icon={skill.svgIcon} description={skill.description} />
+          // <div class=" min-h-full min-w-full border-2 border-primary-blue-500 lg:w-[5%] lg:hover:flex-1">
+          //  <Icon name={skill.svgIcon} class="w-12 h-auto" />  
+          // </div>
           )}   
       </div>
     </div>
-    <div class="flex gap-8 lg:hidden justify-center">
-      <BlueButton id="MobileSkillBack">arrow_back</BlueButton>
-      <BlueButton id="MobileSkillForward">arrow_forward</BlueButton>
+    <div class="flex lg:hidden justify-center items-center">
+      <h3>Scroll Left</h3>
+      <div></div>
+      <span class="material-symbols-outlined animate-pulse1">arrow_forward_ios</span>
+      <span class="material-symbols-outlined animate-pulse2">arrow_forward_ios</span>
+      <span class="material-symbols-outlined animate-pulse3">arrow_forward_ios</span>
     </div>
   </div>
   <Scrolling />

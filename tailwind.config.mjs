@@ -135,7 +135,7 @@ export default {
       none: {
       '-moz-scrollbars-none': 'none',
       '-webkit-scrollbar': 'none'
-    }
+      }
     },
     extend: {
       container: {
@@ -145,6 +145,9 @@ export default {
       animation: {
         "scale-card": "scale_card 0.55s ease-out forwards",
         "scale-card-image": "scale_card_image 0.65s ease-out forwards",
+        "pulse1": "pulse-1 3s ease-in-out infinite",
+        "pulse2": "pulse-2 3s ease-in-out infinite",
+        "pulse3": "pulse-3 3s ease-in-out infinite",
       },
       keyframes: {
         "scale_card": {
@@ -155,7 +158,25 @@ export default {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.5)' },
         },
-      }
+        "pulse-1": {
+          '0%': { opacticy: '1' },
+          '20%': { opacity: '0' },
+          '40%': { opacity: '1' },
+          '80%': {opacity: "0"},
+        },
+        "pulse-2": {
+          '0%': { opacity: "1" },
+          '30%': { opacity: "0" },
+          '60%': { opacity: "1" },
+          '90%': { opacity: "0" },
+        },
+        "pulse-3": {
+          '0%': { opacity: "1" },
+          '40%': { opacity: "0" },
+          '80%': { opacity: "1" },
+          '100%': { opacity: "0" },
+        },
+      },
     },
   },
   plugins: [],
