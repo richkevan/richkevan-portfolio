@@ -1,6 +1,8 @@
----
+d---
 import Metric from "../Metric.astro";
-import wave from "../../assets/laptop-wave.png";
+// import wave from "../../assets/laptop-wave.png";
+import christmasMac from "../../assets/christmas/christmas-mac.png";
+import BayWave from "../../assets/wave-bay.png"
 ---
 <div id="about" class="min-h-screen w-screen bg-neutral-base-900 snap-end snap-always">
   <div class=" pt-28 px-4 flex flex-col pb-16 md:flex-row lg:container lg:justify-between">
@@ -9,17 +11,17 @@ import wave from "../../assets/laptop-wave.png";
         <div class="white-bar"></div>
         <h1>Nice to meet you, I'm Rich Kevan</h1>
         <p>
-          A web developer with a passion for cutting edge technologies. I specialize in full stack applications and have a deep love for great experiences. With 3+ years of experience, I've had the privilege of working on a wide range of projects, from OAuth2 compliant authentication servers to social networks.
+          A web developer with a passion for cutting edge technologies. I specialize in full stack applications and have a deep love for great experiences. With 5+ years of experience, I've had the privilege of working on a wide range of projects, from OAuth2 compliant authentication servers to social networks.
         </p>
       </div>
       <div class='w-full flex flex-col md:flex-row pb-8'>
-        <Metric metrics={["3+","Years of experience"]}/>
+        <Metric metrics={["5+","Years of experience"]}/>
         <Metric metrics={["100+","Successful projects"]}>
       </div>
     </div>
     
     <div class="flex flex-col justify-center w-full bg-neutral-base-700 rounded-full overflow-clip md:h-1/2 md:self-center lg:w-1/3">
-      <img src={wave.src} alt="Rich Kevan" />
+      <img src={BayWave.src} alt="Rich Kevan" />
     </div>
   </div>
 </div>

@@ -2,42 +2,43 @@
 import DateDisplay from "../DateDisplay.astro";
 import instantteams from "../../assets/project-logos/instantteamslogo.svg"
 import baysidechurch from "../../assets/project-logos/baysidechurch.svg"
+import bayside from "../../assets/project-logos/bayside.png"
+import baysidesingles from "../../assets/project-logos/baysidesingles.png"
 const resume = [
   {
     title:"Instant Teams",
     img:instantteams,
-    position:"Junior Full Stack Developer",
+    position:"Full Stack Developer",
     dates: ["Feb 2022", "Present"],
     bullets: [
-      "Refactored and updated the entire routing component of a large-scale web application in 1 week eliminating the need for several components and reducing compile size by 25%",
-          "Develop and maintain a library of npm packages that converted commonly used functions and types into reusable code, resulting in 90% reduction of bugs deployed to production.",
-          "Work with existing and emerging technologies to create single page and complex applications.",
-          "Designed and implemented a complex client/server software architecture to enable identity management across multiple platforms in 2 weeks.",
-          "Maintain a Git repository for Oauth2 server front end and functions. Conduct github code reviews to ensure clean merges into staging and production environments.",
+"Spearheaded SSO server development using NodeJS and TypeScript at Instant Teams, completing ahead of schedule and exemplifying adaptability in web development.",
+"Refactored navigation and layout for over 40,000 users using CSS, significantly improving the user interface and aligning with modern web standards.",
+"Achieved a 20% improvement in process speed by optimizing NodeJS processes and SQL queries, enhancing performance for syncing with NoSQL databases and Redis.",
+"Ensured accessibility compliance by overhauling a client-facing web application to meet WCAG standards, demonstrating a commitment to inclusivity in user experiences.",
+"Led UI/UX enhancements, directly contributing to a more efficient and user-friendly web application, aligning with a focus on seamless user experience.",
     ]
   },
   {
-    title: "Bayside Church",
-    img: baysidechurch,
+    title: "Bayside",
+    img: bayside,
     position: "Junior Application Developer",
     dates: ["Jan 2021", "Dec 2021"],
     bullets: [
-      "Developed and maintained a library of reusable components for a large-scale web application.",
-      "Worked with existing and emerging technologies to create single page and complex applications.",
-      "Designed and implemented a complex client/server software architecture to enable identity management across multiple platforms in 2 weeks.",
-      "Maintained a Git repository for Oauth2 server front end and functions. Conducted github code reviews to ensure clean merges into staging and production environments.",
+      "Developed an enrollment management system at Bayside IT, achieving a 63% improvement in user flow and experience, demonstrating expertise in enhancing user interfaces and engagement.",
+      "Managed PostgreSQL data tasks independently, reducing open support tickets by 37%, showcasing strong skills in database management and efficiency.",
+      "Collaborated effectively under IT management, bridging the gap between development, help desk, and users, enhancing overall operational efficiency and teamwork.",
     ]
   },
   {
-    title: "Bayside Church",
-    img: baysidechurch,
-    position: "Project Manager",
+    title: "Bayside Singles",
+    img: baysidesingles,
+    position: "Front End Developer",
     dates: ["Sept 2017", "Jan 2021"],
     bullets: [
-      "Managed a team of 10+ volunteers to ensure that all projects were completed on time and within budget.",
-      "Worked with internal and external stakeholders to ensure that project requirements were met.",
-      "Managed a budget of $10,000+ to ensure that all projects were completed on time and within budget.",
-      "Worked with internal and external stakeholders to ensure that project requirements were met.",
+    "Elevated online presence by 150%, demonstrating exceptional skill in social media strategy and content creation, crucial for QuickGredients' app promotion and community engagement.",
+    "Achieved up to 52k views on live video content, showcasing proficiency in driving user engagement and digital community leadership.",
+    "Spearheaded the creation of a live stream solution in a 2-week timeframe, reflecting adaptability and innovative thinking, aligning with a dynamic and fast-paced environment.",
+    "Social Media Strategy and Content Creation: Elevated online presence by 150% and achieved up to 52k views on live video content; led campaigns for major events and brand updates, solidifying Bayside Singles as a top-engaged organization in our industry.",
     ]
   }
 ]
@@ -56,7 +57,7 @@ const resume = [
     <DateDisplay dates={job.dates} />
   </summary>
   <div class="pt-4">
-    <ul class="resume">
+    <ul class="resume ml-12 list-disc">
       {job.bullets.map((item) => <li>{item}</li>)}
     </ul>
   </div>

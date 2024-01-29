@@ -1,13 +1,13 @@
 export const education = [
   {
-    title: "Full Stack Web Development",
-    school: ["Kenzie Academy","Apr 2021"],
-    description:"Introduction to the design, development, and implementation of software-based solutions and products for business, entertainment, and consumer markets. Throughout the program, gain hands on experience building your own software products while learning critical-thinking and professional skills"
-  },
-  {
     title: "Bachelor of Science in Computer Science",
     school: ["Western Governor Univ","May 2024"],
     description:"The Bachelor of Science in Computer Science program prepares students for a career in software development. The program focuses on developing skills in computer organization and architecture, database management, programming, software engineering, and web development."
+  },
+  {
+    title: "Full Stack Web Development",
+    school: ["Kenzie Academy","Apr 2021"],
+    description:"Introduction to the design, development, and implementation of software-based solutions and products for business, entertainment, and consumer markets. Throughout the program, gain hands on experience building your own software products while learning critical-thinking and professional skills"
   },
   {
     title: "Web Development",

@@ -126,3 +126,20 @@
     scrollbar-width: none;  /* Firefox */
   }
 }
+
+.video {
+  opacity: 0;
+  animation: videos linear;
+  animation-timeline: view();
+  animation-range-start: -33%;
+  animation-range-end: 75%;
+}
+
+@keyframes videos {
+  0% {
+   opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

@@ -5,43 +5,25 @@ import video2 from "../../assets/videos/pexels-google-deepmind-18069700 (2160p).
 ---
 
 <div id="story" class="min-h-screen w-screen bg-neutral-base-800 snap-end snap-always">
-  <div class="pt-16 px-4 flex flex-col gap-12 md:gap-4 pb-16 lg:container">
-      <div class="flex flex-col gap-8 md:flex-row-reverse">
+  <div class="px-4 flex flex-col gap-12 md:gap-4 lg:container">
+      <div class="flex flex-col gap-8 md:flex-row-reverse justify-end items-center">
         <div class="md:w-2/5">
           <PageTitle>My Story</PageTitle>
           <p>I got my start in programming with an old Apple IIC that was given to us by a family friend. From there I went on to build web pages, modify Wordpress, and customize Myspace profiles. The early exposure to the Apple IIC and my subsequent adventures in web design and customization ignited a lifelong passion for programming and problem-solving, which continues to drive my career in the world of technology and software development.</p>
         </div>
-        <div  class="lg:-translate-y-1/3 video md:w-1/2 h-[50vh]">
-          <video autoplay muted loop src={video1} class="video h-full lg:h-[66vh] rounded-xl mx-auto"/>
+        <div  class="lg:-translate-y-1/3 video md:w-1/2 h-[50vh] video">
+          <video autoplay muted loop src={video1} class="video h-full lg:h-[66dvh] rounded-xl mx-auto"/>
         </div>
       </div>
-      <div class="flex flex-col gap-8 md:flex-row">
+      <div class="flex flex-col gap-8 md:flex-row justify-end items-center">
         <div class="md:w-2/5">
           <PageTitle>My Story</PageTitle>
           <p>I learned to create my first websites in notepad and dreamweaver.  It was a time when the internet was still in its infancy, and the thrill of designing and coding my own web pages was a unique blend of creativity and technical mastery. Those early days of web development laid the foundation for my ongoing passion for technology and design, as I continue to explore the ever-evolving landscape of web development and digital creativity. </p>
         </div>
-        <div class="lg:translate-y-1/3 video md:w-1/2 h-[50vh]">
+        <div class="lg:translate-y-1/3 video md:w-1/2 h-[50vh] video">
           <video autoplay muted loop src={video2} class="video h-full lg:h-[66vh] rounded-xl mx-auto"/>
         </div>
       </div>
     </div>
   </div>
-  <script>
-    window.onscrollend = () => {
-  const videos = document.getElementsByClassName("video");
-  const storyPage = document.getElementById("story")!;
-  
-  if (videos) {
-    if (storyPage.getBoundingClientRect().bottom <= 0) {
-      Array.from(videos).forEach((video) => {
-        video.classList.add("hidden");
-      });
-    } else if (videos[3].classList.contains("hidden") && storyPage.getBoundingClientRect().bottom > 0) {
-      Array.from(videos).forEach((video) => {
-        video.classList.remove("hidden");
-      });
-    }
-  }
-};
-  </script>
 </div>
